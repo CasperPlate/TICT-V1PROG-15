@@ -27,6 +27,8 @@ def ritprijs(leeftijd, weekendrit, afstandKM):
         return ritprijs
 
 
+# Testcases
+
 # 11 en doordeweeks 50km
 print('11 en doordeweeks standaard 50km ' + str(standaardprijs(50)))
 print('11 en doordeweeks ritprijs 50km' + str(ritprijs(11, False, 50)))
