@@ -4,7 +4,7 @@ try:
     hardlopers = open('hardlopers.txt', 'a')
 
 except FileNotFoundError:
-    hardlopers = open('hardlopers.txt', 'a')
+    hardlopers = open('hardlopers.txt', 'w')
 
 i = 0
 while i < 5:
