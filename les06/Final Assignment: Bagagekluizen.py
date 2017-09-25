@@ -12,7 +12,7 @@ def keuzes():
 def keuze():
     status = eval('input("Geef uw keuze: ")')
     try:
-        if status not in '12345':
+        if 1 > int(status) > 5:
             print('Ongeldige keuze')
             status = 0
     except ValueError:
