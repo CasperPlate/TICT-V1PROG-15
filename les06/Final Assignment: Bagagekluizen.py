@@ -91,19 +91,19 @@ while status != 5:
     if status == 0:
         print('Kies nog een keer: ')
 
-    if status == 1:
+    elif status == 1:
         toon_aantal_kluizen_vrij()
 
-    if status == 2:
+    elif status == 2:
         nieuwe_kluis()
 
-    if status == 3:
+    elif status == 3:
         kluis_openen()
 
-    if status == 4:
+    elif status == 4:
         kluis_teruggeven()
 
-    if status == 5:
+    elif status == 5:
         print('Bedankt voor uw bezoek')
 
 
