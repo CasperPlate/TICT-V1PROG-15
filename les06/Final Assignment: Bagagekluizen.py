@@ -11,6 +11,7 @@ def keuzes():
 
 def keuze():
     status = eval('input("Geef uw keuze: ")')
+
     try:
         if 1 > int(status) > 5:
             print('Ongeldige keuze')
@@ -23,21 +24,26 @@ def keuze():
 
 def toon_aantal_kluizen_vrij():
     totaal = 12
+
     kluizen = open('kluizen.txt')
     inhoud = kluizen.readlines()
     kluizen.close()
+
     print('Aantal kluizen beschikbaar is: ' + str(totaal - len(inhoud)))
 
 
 def nieuwe_kluis():
     kluisnummers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
     kluizen = open('kluizen.txt', 'r')
     inhoud = kluizen.readlines()
     kluizen.close()
+
     for regels in inhoud:
         regel = regels.rstrip('\n').split(';')
         if int(regel[0]) in kluisnummers:
             kluisnummers.remove(int(regel[0]))
+
     if len(kluisnummers) > 0:
         wachtwoord = input('Geef een code (minimaal 4 karakters): ')
         if len(wachtwoord) >= 4:
@@ -58,11 +64,13 @@ def kluis_openen():
     kn = input('Geef uw kluisnummer: ')
     ww = input('Geef uw code: ')
     correct = False
+
     for line in lines:
         regel = line.rstrip('\n').split(';')
         if kn == regel[0] and ww == regel[1]:
             print('Uw kluis wordt geopend')
             correct = True
+
     if not correct:
         print('Uw kluisnummer en code komen niet overeen!')
 
@@ -76,10 +84,12 @@ def kluis_teruggeven():
             for line in rf:
                 if line != '{};{}\n'.format(int(kn), ww):
                     wf.write(line)
+
     with open('kluizen.txt', 'w') as wf:
         with open('kluizen_copy.txt', 'r') as rf:
             for line in rf:
                 wf.write(line)
+
     print('Bedankt voor het teruggeven van uw kluisje.')
 
 
