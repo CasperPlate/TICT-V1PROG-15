@@ -40,4 +40,3 @@ def omroepen_reis(lijst_stations, begin, eind):
 beginstation = inlezen_beginstation(stations)
 eindstation = inlezen_eindstation(stations, beginstation)
 omroepen_reis(stations, beginstation, eindstation)
-
